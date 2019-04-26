@@ -40,10 +40,12 @@ submit.on("click", function () {
                 var cell = tbody.append("td").text(value);
             });
             records_added += 1;
+        } else if (inputValue == '') {
+            build_table();
         };
     });
     // warn the user if the date is not found
-    if (records_added == 0) {
+    if (records_added == 0 && inputValue != '') {
         console.log('Sorry, that date does not exist.');
         var row = tbody.append("tr").text('Not a match.');
     };
